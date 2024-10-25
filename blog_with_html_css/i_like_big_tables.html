@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="body-container">
+        <a href="./index.html"> <h4>Back</h4></a>
+    
+
+        <h1> I like big tables </h1>
+
+        <p>
+            I like tables. I use it in my notes, reports and software documentation related to cost/performance/estimation related information. Not just me, everyone like tables as well.
+
+        </p>
+
+        <ul>
+            <li>Companies use to present income statement, balance sheet in their SEC/SEBI filings.</li>
+            <li>Banks mail their monthly statements as tables to their customers.</li>
+            <li>Small and big businesses send their bills and invoice as tables</li>
+            <li>Government bodies (nutrition, medical) publish their key findings as tables in public reports.</li>
+            <li>Everyone’s paycheck and tax filings are formatted as tables.</li>
+        </ul>
+
+        <img src="./images/tables_everywhere.jpg">
+
+
+        <h3> The business and key players </h3>
+
+        <ul>
+            <li>Here are some of the professional tools for table extraction in the market.</li>
+            <li>Adobe Acrobat Pro: available for 20 USD a month.</li>
+            <li>DocSumo.com : Raised 3.5 million USD. Focussed on enterprise customers. Available for 500 USD a month</li>
+        </ul>
+
+        <img src="images/docsumo_capabilities.png">
+
+        <ul>
+            <li>extracttable.com: Api based. Available for 0.04 page per USD.</li>
+            <li>Nanonets: Raised 29 million USD. YC backed. Available for 0.3 per page.</li>
+        </ul>
+
+        <img src="images/nanonets.jpg">
+
+        <h3>Past approaches</h3>
+        <ol>
+            <li>Extracting Table with Native text: open-source python libtrary Tabula allows you do that. If you can select the text in a pdf with cursor, Tabula can extract that. This approach used pdf documents internal structure to extract the text entities and build table from that.</li>
+            <li>Classical ML approach: Train a supervised ML model on hand tuned features (like vertical and horizontal spaces between texts, visible lines etc). This model then can output table region/rectangle coordinates, cell boxes etc.</li>
+            <li>CNN-based approaches: Treat table pdf as an image and run CNN to output table table regions and cells and corresponding text and tables. You can further use this info to construct a table.</li>
+            <li>Transformer-based approach: in 2022, Microsoft released a table-transformer model along with the largest labelled dataset of pdf with tables PubTables-1M. This model achieved good accuracy and could handle various different types of document tables.</li>
+            <li>Graph Neural Network: Identify cells and corresponding text in it and define edges based on their spatial location. Thus a table pdf can be modelled as a graph, which can later be used to extract the table itself.</li>
+        </ol>
+
+        <p>
+            Most of the above mentioend companies use a mixture of Neural net(3,4,5) based approaches to process documets and let customer train their custom ML models.
+
+            <br>
+            An example stack for document AI stack
+    
+        </p>
+
+        <img src="images/deepdoctection.png">
+
+
+        <h3>Future</h3>
+
+        <p>
+            Although we have much better accuracy with transformer and GNN based models, There are few challenges
+        </p>
+        <ul>
+            <li>Cost of running the models is high, as these models need powerful GPU resources to run. (> 0.04 USD per page). Imagine a brokerage company who has to process ID cards for all its one million customers. Cost = 0.04 * 4 cards * 1 million = $ 160k</li>
+            <li>Privacy concerns: Sensitive financial and identity documents need to sent over to server with GPU hardware to process.</li>
+            <li>Most of the training dataset in pubTables-1M is in English. How well these models with generalise to documents(ID cards, passports) with multiple languages.</li>
+            <li>Complex stack: It would be nice to have a simplified stack for document AI. This will result in decreasing the cost as well.</li>
+        </ul>
+    </div>
+    </body>
+    </html>
+    
