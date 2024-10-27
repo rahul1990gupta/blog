@@ -49,3 +49,12 @@ th {
     padding: 10px;
     text-align: left;
 }
+
+figcaption {
+    margin-top: 5px;
+    text-align: center;
+}
+
+caption {
+    margin-bottom: 5px;
+}

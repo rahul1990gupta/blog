@@ -8,42 +8,51 @@
 </head>
 <body>
     <div class="body-container">
-        <a href="./index.html"> <h4>Back</h4></a>
 
-        <h1> 1the De cloud movement</h1>
+        <nav>
+            <a href="./index.html"> <h4>Back</h4></a>
+        </nav>
 
-        <img src="./images/decloud.png">
-        
-        <p>
-            In 2016, Dropbox announced that they will be transitioning off the AWS cloud to move to their own datacenter to reduce cost. It made sense for them. Their users stored the files on server for years. Their S3 bill was huge. S3 charges 23 USD to store a terabyte of data on their server. in 50 USD, you can buy a 1 TB SSD and own it forever. So, basically you recover your initial cost in 2 months. Cost of storage is always going down thanks to advancement in semiconductor technologies. Later many companies(reddit, snapchat, twitter, Uber) followed the suit and announced their plans to exit the cloud and host their services in their own datacenters. AWS on average enjoys a good margin of 40 % on their services after deducting investment costs, operating costs as well as R&D costs.
-        </p>
-        In last decade, everyone advocated for a move to cloud. They said cloud is simple, easy, cheap and flexible. “pay for what you use“ became the new mantra for operating model. It was a panacea for all software problems e.g. Server going down, dealing with peak load. Abstraction after abstractions were developed to make developer’s life “easy“. This had many consequences. 
-        <p>
 
-        </p>
-        <ol>
-            <li>Rise of SaaS. Saas became the new model for distributing software. Start using a software instantly for a fraction of price and pay as long as you use the service. Adobe jumped the bandwagon offering their 60 $ software for 10 $ a month. Cash flow increased. Users were promised the ease of use, sync your data (and pay more), get regular “security” updates and “cutting edge” features. Companies hired more people to create these features and updates. implemented CI/CD pipelines and passed the cost to the end consumer. A decade later, now consumers are paying more for the software, have no control over their data, and are yet to realize any gains from their increase IT spends. on top of it, they are paying extra for “integrating“ several SaaS tools that they use to do things.</li>
-            <li>Software became bloated and inefficient. Since, software was neither running on their own limited capacity datacenter nor on limited capacity consumer hardware, software provider did not optimize the software and subsequently software became bloated with useless features and inefficient processes were implemented. Tech stack was optimized for developer’s convenience rather than customer’s experience. Software quality started going down. Agile and sprint was born. pushing feature every two weeks.</li>
-            <li>Startups begin to bleed money primarily due to IT spend. They were able to grow very fast thanks to hyperscaler cloud platform, but often had problem with generating revenues to match it. So, they folded.</li>
-            <li>Cloud certifications Need. As hyperscaler started to cater to any and everyone, they built abstraction with were really good for fortune 500 companies, but not as useful for small startups just trying to get their service up. As a result operating on AWS became more troublesome than operating from a computer box in a garage.</li>
-            <li>Renting with no ownership mindset</li>
-            <li>Proliferation of wrapper software with vendor Lock in e.g. firebase, DynamoDB, serverless etc.</li>
-            <li>Cloud-native softwares docker and kubernetes ecosystem.</li>
-            <li>Rise of advertising revenue. Companies are collecting more data. They are paying significantly more to collect and store the data. Companies are selling this data to advertisers and covering their storage costs.</li>
-        </ol>
-        
-        <p>
-            Some trends are emerging which points to cloud exit
-        </p> 
-        
-        <ol>
-            <li> In memory Local Analytics database: DuckDB was launched in 2019 and became an instant hit among Data analysts working with Small and medium sized data (~ 1TB).</li>
-            <li> Companies who don’t want to operate a full data center opting for colocation services and put their own best suited hardware there. One person company lichess(biggest chess playing platform) also owns and manages many bare metal servers on OHV Cloud.</li>
-            <li> Software as a product: companies have started selling “pay once“ softwares. e.g. Luminar photo editor, once campfire, final Cut Pro etc.</li>
-            <li> popularity of desktop app platforms: popularity of rust and goiod pickup from Electron has created a renewed interests in tauri framework which allows developers to create desktop apps</li>
-            <li> Optimizing memory usage as well as storage in addition to performance. When llama model was released, immediate llamma.cpp became a bit. To ML engineers it was a delightful surprise to see how much improvement we could get ditching python for custom C++ wrapper library in running inference on ML models.</li>
-        </ol>
-    </div>
+        <article>
+            <h1> The De-cloud movement</h1>
+
+            <figure>
+                <img src="./images/decloud.png">
+                <figcaption>Basecamp saves 7 million by leaving cloud</figcaption>
+            </figure>
+            
+            
+            <p>
+                In 2016, Dropbox announced that they will be transitioning off the AWS cloud to move to their own datacenter to reduce cost. It made sense for them. Their users stored the files on server for years. Their S3 bill was huge. S3 charges 23 USD to store a terabyte of data on their server. in 50 USD, you can buy a 1 TB SSD and own it forever. So, basically you recover your initial cost in 2 months. Cost of storage is always going down thanks to advancement in semiconductor technologies. Later many companies(reddit, snapchat, twitter, Uber) followed the suit and announced their plans to exit the cloud and host their services in their own datacenters. AWS on average enjoys a good margin of 40 % on their services after deducting investment costs, operating costs as well as R&D costs.
+            </p>
+            In last decade, everyone advocated for a move to cloud. They said cloud is simple, easy, cheap and flexible. “pay for what you use“ became the new mantra for operating model. It was a panacea for all software problems e.g. Server going down, dealing with peak load. Abstraction after abstractions were developed to make developer’s life “easy“. This had many consequences. 
+            <p>
     
+            </p>
+            <ol>
+                <li>Rise of SaaS. Saas became the new model for distributing software. Start using a software instantly for a fraction of price and pay as long as you use the service. Adobe jumped the bandwagon offering their 60 $ software for 10 $ a month. Cash flow increased. Users were promised the ease of use, sync your data (and pay more), get regular “security” updates and “cutting edge” features. Companies hired more people to create these features and updates. implemented CI/CD pipelines and passed the cost to the end consumer. A decade later, now consumers are paying more for the software, have no control over their data, and are yet to realize any gains from their increase IT spends. on top of it, they are paying extra for “integrating“ several SaaS tools that they use to do things.</li>
+                <li>Software became bloated and inefficient. Since, software was neither running on their own limited capacity datacenter nor on limited capacity consumer hardware, software provider did not optimize the software and subsequently software became bloated with useless features and inefficient processes were implemented. Tech stack was optimized for developer’s convenience rather than customer’s experience. Software quality started going down. Agile and sprint was born. pushing feature every two weeks.</li>
+                <li>Startups begin to bleed money primarily due to IT spend. They were able to grow very fast thanks to hyperscaler cloud platform, but often had problem with generating revenues to match it. So, they folded.</li>
+                <li>Cloud certifications Need. As hyperscaler started to cater to any and everyone, they built abstraction with were really good for fortune 500 companies, but not as useful for small startups just trying to get their service up. As a result operating on AWS became more troublesome than operating from a computer box in a garage.</li>
+                <li>Renting with no ownership mindset</li>
+                <li>Proliferation of wrapper software with vendor Lock in e.g. firebase, DynamoDB, serverless etc.</li>
+                <li>Cloud-native softwares docker and kubernetes ecosystem.</li>
+                <li>Rise of advertising revenue. Companies are collecting more data. They are paying significantly more to collect and store the data. Companies are selling this data to advertisers and covering their storage costs.</li>
+            </ol>
+            
+            <p>
+                Some trends are emerging which points to cloud exit
+            </p> 
+            
+            <ol>
+                <li> In memory Local Analytics database: DuckDB was launched in 2019 and became an instant hit among Data analysts working with Small and medium sized data (~ 1TB).</li>
+                <li> Companies who don’t want to operate a full data center opting for colocation services and put their own best suited hardware there. One person company lichess(biggest chess playing platform) also owns and manages many bare metal servers on OHV Cloud.</li>
+                <li> Software as a product: companies have started selling “pay once“ softwares. e.g. Luminar photo editor, once campfire, final Cut Pro etc.</li>
+                <li> popularity of desktop app platforms: popularity of rust and goiod pickup from Electron has created a renewed interests in tauri framework which allows developers to create desktop apps</li>
+                <li> Optimizing memory usage as well as storage in addition to performance. When llama model was released, immediate llamma.cpp became a bit. To ML engineers it was a delightful surprise to see how much improvement we could get ditching python for custom C++ wrapper library in running inference on ML models.</li>
+            </ol>
+        </article>
+    </div>
 </body>
 </html>
