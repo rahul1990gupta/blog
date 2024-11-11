@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+<body>
+    <div class="body-container">
+        <nav>
+            <a href="../index.html"> <h4>Back</h4></a>
+        </nav>
+        <article>
+            <h1>  why use Nginx?</h1>
+
+            <h2 id="setup-starting-state">Setup - Starting State</h2>
+            <ul>
+            <li>you have a webapp running on a ec2 instance with a public IP running 80.</li>
+            <li>your webapp is running in sudo mode.</li>
+            <li>You can access it from browser and security rules are correctly setup </li>
+            </ul>
+            <h2 id="end-state">End State</h2>
+            <ul>
+            <li>Webapp will be running as normal user on port 3000 (or any other port of your choice)</li>
+            <li>Map the traffic from namecheap to your public ec2 instance. </li>
+            <li>use nginx as a web server to route traffic to rails app. </li>
+            <li>use certbot to enable https endpoint. </li>
+            </ul>
+            <h2 id="the-process">The process</h2>
+            <h3 id="map-your-dns-record-to-your-public-ip">Map Your dns record to your public IP</h3>
+            <ul>
+            <li>map your dns record and set the TTL to 1 min. After that you can check a tool like <a href="https://dnschecker.org/#A/dubscale.com">dnschecker</a> to check the dns propagation.</li>
+            <li>Once the dns is propagated, you should be able to access your app through the http domain name. </li>
+            </ul>
+            <img src="../images/namecheap-dns.png"> 
+            <h3 id="install-ngnix-web-server">Install ngnix web server</h3>
+            <p>Why do we need nginx ?</p>
+            <ul>
+            <li>It allows us to seperate webserver specific config and logic to be handles by nginx. </li>
+            <li>allows to use same box for serving different domains and subdomains. </li>
+            <li>allows us to run multiple apps (python apps, ruby apps) on the same box.</li>
+            <li>allows us to run our app as a normal user (not sudo)</li>
+            </ul>
+            <p>Install nginx by running <code>apt-get install nginx</code></p>
+            <p>create a file <code>/etc/nginx/sites-available/dubscale.conf</code> and write the following config </p>
+            <pre>
+<span class="hljs-section">server</span> {
+    <span class="hljs-attribute">server_name</span> dubscale.com;
+    <span class="hljs-attribute">port</span> <span class="hljs-number">80</span>
+    location / {
+        <span class="hljs-attribute">proxy_pass</span> http://127.0.0.1:3000;
+    }
+}
+             </pre>
+            <p>and create a soft link in <code>/etc/nginx/sites-enabled/dubscale.conf</code>
+            This means that server is accepting traffic only at port 80 and from dubscale.com and redirecting it to localhost at port 3000. 
+            Now, run the webapp at port 3000 with non-sudo user. 
+            Start nginx server by running <code>sudo service nginx start</code></p>
+            <h3 id="install-certbot">Install certbot</h3>
+            <p>Now, we will install certbot and configure ssl certificate to enable SSL certificate to the end user. </p>
+            <ul>
+            <li>Install certbot by <code>snap install --classic certbot</code>. </li>
+            <li>Run <code>certbot</code></li>
+            <li>It will ask for your emaild id and issue the SSL certificate and also configure the nginx config. </li>
+            <li>Verify that your site is now accessible though https domain name.</li>
+            </ul>
+            
+        </article>
+ 
+    </div>
+
+</body>
+</html>
+
